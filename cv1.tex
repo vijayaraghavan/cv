@@ -1,0 +1,131 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge  \textsc{Vijayaraghavan Apparsundaram}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Information}
+
+\begin{tabular}{rl}
+    \textsc{Address:}   & 1901 South State St, Unit E, Seattle, WA \\
+    \textsc{Phone:}     & +1 206 201 4360\\
+    \textsc{email:}     & \href{mailto:vijaywalker@gmail.com}{vijaywalker@gmail.com}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+
+\\\textsc{May 2018} & Software Engineer at \textsc{Qualtrics}  \\\textsc{Dec 2020}&\emph{IQ Directory}\\&\footnotesize{I work on backend services for Contacts Platform, which is used by Qualtrics users to store and manage customer information for their CX programs}\\\multicolumn{2}{c}{} \\
+
+\\\textsc{Jan 2017} & SDE at \textsc{Amazon Web Services}  \\\textsc{Mar 2018}&\emph{Global Cloud Initiatives}\\&\footnotesize{I develop APIs for OperatorNet, a critical service for allowing AWS's operating partners in China to administer the region on Amazon's behalf and meet Chinese governmental regulations. The primary challenges are maintaining security and auditability, while adhering to AWS API standards.}\\\multicolumn{2}{c}{} \\
+
+\\\textsc{Jan 2016} & SDE at \textsc{Amazon Web Services}  \\\textsc{Jan 2017}&\emph{Region Build Automation}\\&\footnotesize{I worked on the bootstrap VPC, used to deploy essential services for bootstrapping racks in new regions. I developed tools for self-service provisioning of EC2 instances and ELBs for region builds. I supported the launch of the Ohio, Canada, Mumbai and London regions. I used Chef for configuring the instances, and AngularJS and Rails for the UI features, with a number of AWS services in the backend.}\\\multicolumn{2}{c}{} \\
+
+\\\textsc{Jun 2013} & SDE at \textsc{Amazon Web Services}  \\\textsc{Jan 2016}&\emph{Data Center Systems}\\&\footnotesize{I worked on tools and services to support day to day operations in Amazon's data centers. I developed a tool to automate the manual server repair process by tying together AWS's inventory management system, hardware design system and the hardware monitoring system. This reduced time to repair from minutes to seconds, and error rates by 60\%.}\\\multicolumn{2}{c}{} \\
+
+\\\textsc{Jun 2012} & SDE Intern at \textsc{Amazon Web Services}  \\\textsc{Aug 2012}&\emph{Data Center Systems}\\&\footnotesize{I developed a prototype for Atlas, a foundational service to specify the connections between hardware entities in the data center. The service would automatically infer connections based on a metagraph, and could then be used to find bottlenecks and single points of failure in the data center hardware topology. I used Java, DynamoDB, and Amazon's internal framework for service oriented architecture.}\\\multicolumn{2}{c}{} \\
+
+\end{tabular}
+
+\section{Work Experience (Ctd.)}
+\begin{tabular}{r|p{11cm}}
+
+\\\textsc{Dec 2008} & Software Engineer at  \textsc{Read-Ink Technologies}  \\\textsc{Mar 2011}&\emph{Handwriting recognition}\\&\footnotesize{I was part of a 3 member team working with the research team to translate research findings into Read-Ink's recognition engine. I developed parts of the storage layer, the core engine, and tools for data visualization. I also developed a DSL for specifying character models using Lua to allow the research team to easily tweak the engine without the input of the developers.}\\\multicolumn{2}{c}{} \\
+
+\\\textsc{Jun 2008} & Member of Technical Staff at  \textsc{Adobe}  \\\textsc{Dec 2008}&\emph{Adobe Captivate}\\&\footnotesize{I worked on Captivate, an e-learning tool. I developed a feature to preview, navigate and organize slides into groups and extended a library to convert PPT files to SWF files by adding support for new autoshapes. I used C++ and proprietary libraries for the GUI work.}\\\multicolumn{2}{c}{} \\
+
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{April} 2013 & Master of Science in \textsc{Computer Science}, \textbf{University of Massachusetts}, Amherst\\
+&\normalsize \textsc{Gpa}: 3.88/4\\
+&\normalsize \textsc{Courses}: Systems; Artificial Intelligence; Algorithms; Information Theory\\
+
+\textsc{April} 2008& Bachelor of Technology in \textsc{Computer Engineering},  \normalsize\textbf{NITK}, Karnataka\\
+&\normalsize \textsc{Gpa}: 7.05/10\\
+&\normalsize \textsc{Courses}: Operating Systems; Databases; Algorithms; Discrete Mathematics\\
+
+\end{tabular}
+
+
+%Section: Languages and Technologies
+\section{Skills etc}
+\begin{tabular}{rl}
+\textsc{Languages:}& Kotlin; Typescript; Ruby on Rails; Java;\\
+\textsc{Technologies:}&Kinesis; RDS Aurora/MySQL;DynamoDB; EC2; AWS Simple Workflow; Cloudformation; SNS; SQS\\
+\textsc{Patents:}& No.9734247: 'Topology Service Using Closure Tables And Metagraphs'\\
+
+\end{tabular}
+
+\end{document}
